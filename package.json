@@ -4,7 +4,9 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "license": "ITM",
   "publishConfig": {
     "access": "public",
@@ -37,6 +39,8 @@
     "pre-commit": "npm exec lint-staged --concurrent false"
   },
   "lint-staged": {
-    "*.ts|js": ["prettier --write --ignore-unknown"]
+    "*.ts|js": [
+      "prettier --write --ignore-unknown"
+    ]
   }
 }

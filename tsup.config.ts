@@ -1,14 +1,14 @@
-import { defineConfig } from 'tsup'
-import pkg from './package.json'
+import { defineConfig } from 'tsup';
+import pkg from './package.json';
 
 function externalWithIncludes(packages: string[] = []) {
   // @ts-ignore
-  const deps = pkg.dependencies || {}
+  const deps = pkg.dependencies || {};
   // @ts-ignore
-  const peerDeps = pkg.peerDependencies || {}
+  const peerDeps = pkg.peerDependencies || {};
   return Object.keys({ ...deps, ...peerDeps }).filter(packageName => {
-    return !packages.includes(packageName)
-  })
+    return !packages.includes(packageName);
+  });
 }
 
 export default defineConfig(() => {
@@ -39,5 +39,5 @@ export default defineConfig(() => {
       // opts.inject = (opts.inject || []).filter(p => !p.includes('_shims'))
     },
     onSuccess: ``,
-  }
-})
+  };
+});
